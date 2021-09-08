@@ -52,6 +52,19 @@ function Phoenix.Math.Distance(x1, x2, y1, y2)
 end
 
 --[[
+function to rotate coordinates
+"y = Phoenix.Math.Rotate(10, 10, 90, 0)" will rotate the y coordinate 90 degrees
+"x = Phoenix.Math.Rotate(10, 10, 90, 1)" will rotate the x coordinate 90 degrees
+]]
+function Phoenix.Math.Rotate(y, x, z, mode)
+	if (mode == 0) then --y rotation
+		return (y * math.cos(z)) - (x * math.sin(z))
+	elseif (mode == 1) then -- x rotation
+		return (x * math.cos(z)) + (y * math.sin(z))
+	end
+end
+
+--[[
 function to convert a table to a string
 "str = Phoenix.Table.Dump(table)"
 ]]
